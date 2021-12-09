@@ -24,14 +24,6 @@ type config struct {
 		dsn string
 	}
 }
-type AppStatus struct {
-	Status      string `json:"status"`
-	Environment string `json:"environment"`
-}
-
-type application struct {
-	models models.Models
-}
 
 func main() {
 	var cfg config
