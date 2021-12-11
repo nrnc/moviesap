@@ -29,7 +29,7 @@ func main() {
 	var cfg config
 	flag.IntVar(&cfg.port, "port", 4000, "Server port to listen on")
 	flag.StringVar(&cfg.env, "env", "development", "Aplication Environment(production|development)")
-	flag.StringVar(&cfg.db.dsn, "dsn", "postgres://unbxd@localhost/movies?sslmode=disable", "postgres connection string")
+	flag.StringVar(&cfg.db.dsn, "dsn", "postgres://unbxd:password@postgres:5432/movies?sslmode=disable", "postgres connection string")
 	flag.Parse()
 	logger := log.New(os.Stdout, "", log.Ldate|log.Ltime)
 	db, err := openDB(cfg)

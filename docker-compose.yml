@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:12-alpine
+    environment:
+      - POSTGRES_USER=unbxd
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=movies
+  db-access:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4444:4444"
+    depends_on:
+      - postgres

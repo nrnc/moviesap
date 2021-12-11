@@ -10,7 +10,7 @@ RUN go mod download
 
 # Copy the code into the container
 COPY . .
-
+ENV CGO_ENABLED=0
 # Build the application
 RUN go build -o main ./cmd/api/main.go
 
