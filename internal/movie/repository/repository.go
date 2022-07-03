@@ -98,7 +98,7 @@ func (m *movieRepository) GetMovieByID(ctx context.Context, id int64) (entity.Mo
 		&movie.UpdatedAt,
 	)
 	if err != nil {
-		return movie, err
+		return movie, entity.ErrNotFound
 	}
 
 	return movie, nil

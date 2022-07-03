@@ -68,7 +68,7 @@ func makeGetMovieByIdEndpoint(s entity.MovieService) endpoint.Endpoint {
 		req := request.(dto.GetMovieByIDRequest)
 		movie, err := s.GetMovieByID(ctx, req.ID)
 		if err != nil {
-			return dto.GetMovieByIDResponse{Movie: entity.Movie{}, Err: err}, err
+			return dto.GetMovieByIDResponse{Movie: entity.Movie{}, Err: err}, nil
 		}
 		return dto.GetMovieByIDResponse{Movie: movie, Err: nil}, nil
 	}
